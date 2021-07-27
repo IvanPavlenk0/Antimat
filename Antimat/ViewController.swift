@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     
     func task10() {
 
-        let badWordsText = "My pick is great, my pick is very great"
+        let badWordsText = "My Pick is grEat, my pick is very great"
         let filterWords = ["pick", "great"]
          
         print(antiMat(text: badWordsText, filter: filterWords))
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
 
                     let range = fixedText[fixedText.index(fixedText.startIndex, offsetBy: position)..<fixedText.index(fixedText.startIndex, offsetBy: position + lengthMat)]
                     
-                    if range == mat {
+                    if range.lowercased() == mat.lowercased() {
                         let cutRange = fixedText.index(fixedText.startIndex, offsetBy: position)..<fixedText.index(fixedText.startIndex, offsetBy: position + lengthMat)
                         fixedText.removeSubrange(cutRange)
                         fixedText.insert(contentsOf:starOnMat(mat: mat), at: fixedText.index(fixedText.startIndex, offsetBy: position))
